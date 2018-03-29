@@ -8,9 +8,8 @@ class TheFader extends Component {
 
 render() {
 return(
-<div>
-<div className="carouselBackground">
 
+<div className="carouselBackground">
 
     <img
       className="carouselImages firstCarouselImage"
@@ -30,7 +29,7 @@ return(
       src={require("../images/simple4.jpg")}/>
    
 
-</div></div>
+</div>
 )}
 }
 export default TheFader

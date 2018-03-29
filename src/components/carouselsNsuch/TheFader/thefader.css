@@ -60,13 +60,12 @@
     animation-name: imageSlider4;
     animation-duration: 16s;
     animation-fill-mode: forwards;
-    left: 0vw;
     animation-iteration-count: infinite;
     -webkit-animation-iteration-count: infinite;
     -webkit-animation-name: imageSlider4;
     -webkit-animation-duration: 16s;
     -webkit-animation-fill-mode: forwards;
-  position: absolute;
+
   }
   
   @keyframes imageSlider1 {
