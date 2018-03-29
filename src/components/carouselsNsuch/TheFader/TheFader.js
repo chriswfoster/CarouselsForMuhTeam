@@ -14,20 +14,20 @@ return(
 
     <img
       className="carouselImages firstCarouselImage"
-      src={require("./carouselimages/security 2.png")}
+      src={require("../images/simple1.jpg")}
     />
 
     <img
       className="carouselImages secondCarouselImage"
-      src={require("./carouselimages/automation 5.png")}
+      src={require("../images/simple2.jpg")}
     />
 
     <img
       className="carouselImages thirdCarouselImage"
-      src={require("./carouselimages/CustomSolutions.png")}
+      src={require("../images/simple3.jpg")}
     />
     <img className ="carouselImages fourthCarouselImage"
-      src={require("./carouselimages/247support.png")}/>
+      src={require("../images/simple4.jpg")}/>
    
 
 </div></div>
