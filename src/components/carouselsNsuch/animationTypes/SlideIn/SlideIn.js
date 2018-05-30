@@ -9,7 +9,7 @@ render(){
     const {styles, imgArray, imgStyles} = this.props
 return(
 <div style={{...styles, display: "inline"}}>
-{imgArray.map(item => <SlideInImages image={item} styles={imgStyles}/>)}
+{imgArray.map(item => <img src={item} style={{...imgStyles}}/>)}
 </div>
 )
 }

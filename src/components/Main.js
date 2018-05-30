@@ -20,7 +20,9 @@ class Home extends Component {
     const styles = {
       backgroundColor: "blue",
       width: "50vw",
-      height: "50vh"
+      height: "50vh",
+      position: "absolute",
+      whiteSpace: "nowrap"
     }
 
     const imgStyles = {
