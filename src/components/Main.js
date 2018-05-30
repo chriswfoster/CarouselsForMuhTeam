@@ -1,5 +1,7 @@
 import React, { Component } from "react"
 
+import SlideIn from './carouselsNsuch/animationTypes/SlideIn'
+
 class Home extends Component {
   constructor() {
     super()
@@ -15,7 +17,22 @@ class Home extends Component {
   }
 
   render() {
-    return <div />
+
+    const styles = {
+      backgroundColor: "blue",
+      width: "50vw",
+      height: "50vh"
+    }
+    
+    const imgStyles = {
+      width: "50%",
+      height: "50%"
+    }
+
+    return <div>
+      <SlideIn imgArray={this.state.images} styles={styles} imgStyles={imgStyles}/>
+      }
+      </div>
   }
 }
 export default Home
