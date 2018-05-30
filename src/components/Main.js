@@ -29,7 +29,6 @@ class Home extends Component {
     const imgStyles = {
       width: "100%",
       height: "100%",
-      paddingRight: "50%",
       position: "absolute"
     }
 
