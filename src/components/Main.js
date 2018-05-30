@@ -22,19 +22,24 @@ class Home extends Component {
       width: "50vw",
       height: "50vh",
       position: "absolute",
-      whiteSpace: "nowrap"
+      whiteSpace: "nowrap",
+      overflowX: "hidden"
     }
 
     const imgStyles = {
-      width: "50%",
-      height: "50%"
+      width: "100%",
+      height: "100%",
+      paddingRight: "50%",
+      position: "absolute"
     }
 
     return (
       <div>
-        <SlideIn imgArray={this.state.images} styles={styles} imgStyles={imgStyles} />
-
-    
+        <SlideIn
+          imgArray={this.state.images}
+          styles={styles}
+          imgStyles={imgStyles}
+        />
       </div>
     )
   }

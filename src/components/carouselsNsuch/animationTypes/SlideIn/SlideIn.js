@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 
-import { slideInRight, slideOutLeft } from 'react-animations'
+import { slideInRight, slideOutLeft } from "react-animations"
+import Radium, { StyleRoot } from "radium"
 
 import SlideInImages from "./SlideInImages"
 
@@ -8,35 +9,60 @@ class SlideIn extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      previousImage: this.props.imgArray[0],
-      nextImage: "first"
+      a: 0
     }
   }
 
-  imageLooper(arr) {
-    let i = 0
+  componentDidMount() {
     setInterval(() => {
-      if (i === arr.length - 1) {
-        i = 0
-        this.setState({ nextImage: arr[0], previousImage: arr[i] })
+      if (this.state.a === this.props.imgArray.length - 1) {
+        this.setState({ a: 0 })
       } else {
-        i++
-        this.setState({ nextImage: arr[i + 1], previousImage: arr[i] })
+        this.setState({ a: this.state.a + 1 })
       }
-    }, 1000)
+    }, 3000)
   }
 
   render() {
-    console.log(this.props)
+    console.log(this.state)
     const { styles, imgArray, imgStyles } = this.props
-    this.imageLooper(imgArray)
+    const otherStyles = {
+      slideInRight: {
+        animation: "x 3s",
+        animationName: Radium.keyframes(slideInRight, "slideInRight"),
+        ...this.props.imgStyles
+      },
+      slideOutLeft: {
+        animation: "x 3s",
+        animationName: Radium.keyframes(slideOutLeft, "slideOutLeft"),
+        ...this.props.imgStyles
+      }
+    }
+    const { a } = this.state
     return (
       <div style={{ ...styles, display: "inline" }}>
-        <img src={this.state.previousImage} style={{ ...imgStyles }} />
-
-        {this.state.nextImage === "first" ? null : (
-          <img src={this.state.nextImage} style={{ ...imgStyles }} />
-        )}
+        <div style={{ width: "100%", height: "100%", position: "relative" }}>
+          <StyleRoot>
+            {this.props.imgArray.map(
+              (item, i) =>
+                a === i ? (
+                  <img
+                    src={this.props.imgArray[i]}
+                    style={otherStyles.slideInRight}
+                  />
+                ) : null
+            )}
+            {this.props.imgArray.map(
+              (item, i) =>
+                a === i ? (
+                  <img
+                    src={this.props.imgArray[a === 0 ? imgArray.length-1 : a-1]}
+                    style={otherStyles.slideOutLeft}
+                  />
+                ) : null
+            )}
+          </StyleRoot>
+        </div>
       </div>
     )
   }
