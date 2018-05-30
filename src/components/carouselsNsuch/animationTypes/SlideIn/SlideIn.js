@@ -3,6 +3,19 @@ import React, {Component} from 'react'
 import SlideInImages from './SlideInImages'
 
 class SlideIn extends Component{
+    constructor(){
+        super()
+        this.state= {
+            previousImage: "",
+            nextImage: ""
+        }
+    }
+
+    imageLooper(){
+        
+    }
+
+
 
 render(){
     console.log(this.props)
